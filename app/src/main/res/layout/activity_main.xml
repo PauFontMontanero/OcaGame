@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8E8E8E"
+    android:background="#EAEAEA"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -28,7 +28,11 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:hint="Player 1"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="#FFFFFF"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            />
 
         <EditText
             android:id="@+id/Player2TextView"
@@ -37,7 +41,11 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:hint="Player 2"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="#FFFFFF"
+            android:textColor="#333333"
+            android:textColorHint="#AAAAAA"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -58,8 +66,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -78,7 +87,10 @@
             android:id="@+id/ComençarPartidaButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Començar Partida" />
+            android:text="Començar Partida"
+            android:background="#81C784"
+            android:textColor="#FFFFFF"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -95,48 +107,56 @@
 
         <TextView
             android:id="@+id/Player1Counter"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="20dp"
             android:text="0"
-            android:textSize="90sp" />
+            android:textAlignment="center"
+            android:textSize="90sp"
+            android:textColor="#4CAF50"
+            />
 
         <TextView
             android:id="@+id/Player2Counter"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
+            android:layout_marginStart="50dp"
             android:layout_marginEnd="100dp"
             android:text="0"
-            android:textSize="90sp" />
+            android:textAlignment="center"
+            android:textSize="90sp"
+            android:textColor="#2196F3"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/Player2TurnIndicator"
-            android:layout_width="50dp"
-            android:layout_height="5dp"
-            android:layout_marginStart="100dp"
-            android:orientation="vertical"></LinearLayout>
+            android:id="@+id/TurnIndicator1"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:orientation="vertical"
+            android:background="#BBDEFB"
+            />
 
         <LinearLayout
-            android:id="@+id/Player2TurnIndicator"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:id="@+id/TurnIndicator2"
+            android:layout_width="100dp"
+            android:layout_height="5dp"
             android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical"
+            android:background="#BBDEFB"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -150,19 +170,11 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         app:layout_constraintVertical_bias="0.100000024">
 
-        <TextView
-            android:id="@+id/WinnerMessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textAlignment="center" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:onClick="diceRoll"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -174,8 +186,20 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="diceRoll"
             tools:layout_width="150dp"
             tools:srcCompat="@drawable/_perspective" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/Info"
+        android:layout_width="407dp"
+        android:layout_height="93dp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textColor="#333333"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
